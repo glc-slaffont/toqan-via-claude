@@ -1,0 +1,11 @@
+{
+  "name": "toqan-via-claude",
+  "description": "Claude plugin to call any Toqan AI agent — ask, continue conversations, upload files.",
+  "owner": { "name": "Stephane Laffont" },
+  "plugins": [
+    {
+      "name": "toqan-mcp",
+      "source": "."
+    }
+  ]
+}
