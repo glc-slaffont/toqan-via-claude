@@ -1,0 +1,28 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "toqan-mcp",
+  "version": "1.0.0",
+  "description": "Use any Toqan AI agent from Claude — ask, continue conversations, upload files, inspect tool calls.",
+  "author": {
+    "name": "Stephane Laffont"
+  },
+  "mcpServers": {
+    "toqan": {
+      "command": "node",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/dist/index.js"],
+      "env": {
+        "TOQAN_API_KEY": "${user_config.toqan_api_key}",
+        "TOQAN_TIMEOUT_SECONDS": "300"
+      }
+    }
+  },
+  "userConfig": {
+    "toqan_api_key": {
+      "type": "string",
+      "title": "Toqan API Key",
+      "description": "Your API key from the Toqan platform (liée à un agent spécifique)",
+      "sensitive": true,
+      "required": true
+    }
+  }
+}
